@@ -1,0 +1,27 @@
+.header{
+    background-color: salmon;
+    height: 100px;
+}
+
+
+.ham-icon{
+    text-align: left;
+    color: black;
+}
+
+.search{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    input{
+        width: 50%;
+        border-radius: 20px;
+        height: 40px;
+    }
+}
+
+.cart{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
