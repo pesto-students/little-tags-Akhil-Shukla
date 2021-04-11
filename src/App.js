@@ -2,7 +2,7 @@ import "./default.scss"
 import { Route, Switch } from "react-router"
 
 //layouts
-import MainLayout from './layouts/MainLayout';
+import MainLayout from './layouts/MainLayout/MainLayout';
 
 //pages
 import Homepage from "./pages/HomePage/Homepage";
