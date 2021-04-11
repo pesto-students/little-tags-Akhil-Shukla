@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Header.scss"
-import Logo from "../../assets/logo.PNG"
+import Logo from "../../assets/logo.png"
 import {AiOutlineShoppingCart,AiOutlineUser,AiOutlineGlobal,AiOutlineSearch} from 'react-icons/ai'
 import { Link } from 'react-router-dom'
 
