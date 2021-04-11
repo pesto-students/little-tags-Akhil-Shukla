@@ -1,10 +1,13 @@
 import React from 'react';
 
+import Directory from '../../components/Directory';
+import './styles.scss';
+
 const Homepage = () => {
     return (
-        <div>
-            <h1>Home Page</h1>
-        </div>
+        <section className='hero-wrapper'>
+           <Directory  />
+        </section>
     )
 }
 

@@ -5,9 +5,16 @@ html {
 
 html,
 body {
-  height: 100%;
   margin: 0;
   padding: 0;
+}
+
+html,
+body,
+#root,
+.App,
+.main {
+  height: 100%;
 }
 
 *,
@@ -27,11 +34,4 @@ body {
 
 a {
   text-decoration: none;
-}
-
-a,
-a:hover {
-  -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
 }

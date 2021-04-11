@@ -20,7 +20,7 @@ function Header(props) {
                     <span><AiOutlineSearch/></span>
                     <input type="text"></input>
                     </div>
-                    
+
                     <div className="user-logo"><AiOutlineUser/></div>
                     <div className="user-signin"><Link to="/registration"><span>LogIn/SignUp</span></Link></div>
                     <div className="cart-logo"><AiOutlineShoppingCart/></div>
