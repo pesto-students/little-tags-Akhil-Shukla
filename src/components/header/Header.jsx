@@ -1,7 +1,8 @@
 import React from 'react'
 import "./Header.scss"
-import Logo from "../../assets/logo.png"
+import Logo from "../../assets/logo.PNG"
 import {AiOutlineShoppingCart,AiOutlineUser,AiOutlineGlobal,AiOutlineSearch} from 'react-icons/ai'
+import { Link } from 'react-router-dom'
 
 
 function Header(props) {
@@ -9,16 +10,20 @@ function Header(props) {
             <header className="header">
                 <div className="wrap">
                     <div className="logo">
-                    <img src={Logo} alt="SimpleTut LOGO" />
+                    <Link to="/" className="logo-link">
+                        <div>
+                            <img src={Logo} alt="apparel city" />
+                        </div>
+                    </Link>
                     </div>
                     <div className="search-input">
                     <span><AiOutlineSearch/></span>
                     <input type="text"></input>
                     </div>
                     
-                    <div className="cart-logo"><AiOutlineShoppingCart/></div>
                     <div className="user-logo"><AiOutlineUser/></div>
-                    <div className="user-signin"><span>LogIn/SignUp</span></div>
+                    <div className="user-signin"><Link to="/registration"><span>LogIn/SignUp</span></Link></div>
+                    <div className="cart-logo"><AiOutlineShoppingCart/></div>
                     <div className="glob-logo"><AiOutlineGlobal/></div>
                     
 
