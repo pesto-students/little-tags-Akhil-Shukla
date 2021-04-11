@@ -2,15 +2,19 @@ import React from 'react'
 import "./Header.scss"
 import Logo from "../../assets/logo.png"
 import {AiOutlineShoppingCart,AiOutlineUser,AiOutlineGlobal,AiOutlineSearch} from 'react-icons/ai'
+import {IconContext} from 'react-icons' 
 
 
 function Header(props) {
     return (
+        
             <header className="header">
+                <IconContext.Provider value={{color:"orange"}}>
                 <div className="wrap">
                     <div className="logo">
                     <img src={Logo} alt="SimpleTut LOGO" />
                     </div>
+                    <div></div>
                     <div className="search-input">
                     <span><AiOutlineSearch/></span>
                     <input type="text"></input>
@@ -23,7 +27,7 @@ function Header(props) {
                     
 
                 </div>
-
+                </IconContext.Provider>
             </header>
     )
 }
