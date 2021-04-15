@@ -8,12 +8,11 @@ import './styles.scss';
 export default function SignIn(props){
     const {manageSigInModal,manageLogo} = props
     const firebase = useContext(FirebaseContext);
-  const [errorMessage, setErrorMessage] = useState('');
+  const [ setErrorMessage] = useState('');
   const handleGoogleSignIn = () => {
     firebase
       .doGoogleSignIn()
       .then((authUser) => {
-        // console.log({ email: authUser.email, username: authUser.displayName });
         console.log(authUser);
         return firebase.user(authUser.user.uid).set({
           email: authUser.user.email,
@@ -22,7 +21,6 @@ export default function SignIn(props){
         });
       })
       .then(() => {
-        // props.history.push('/');
         manageLogo();
         manageSigInModal();
       })
