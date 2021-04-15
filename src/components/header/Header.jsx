@@ -5,12 +5,7 @@ import {AiOutlineShoppingCart,AiOutlineUser,AiOutlineGlobal,AiOutlineSearch} fro
 import { Link } from 'react-router-dom'
 
 
-function Header(props) {
-    const {manageSigInModal,showLogo,handleSignOut} = props;
-
-    // useEffect(() => {
-    //    console.log(showUserLogo)
-    // }, [showUserLogo])
+function Header({manageSigInModal,showLogo,handleSignOut}) {
 
     return (
         
@@ -27,7 +22,6 @@ function Header(props) {
                     <span><AiOutlineSearch/></span>
                     <input type="text" placeholder="Search..."></input>
                     </div>
-                    {/* <div className="user-logo"><AiOutlineUser/></div> */}
                     {showLogo?<div className="user-logo">
                     <AiOutlineUser/>
                     <span className="user-logout-options">
@@ -40,9 +34,7 @@ function Header(props) {
                     </div>
 
                     </span>
-                    </div> :<div className="user-signin"><Link onClick={manageSigInModal}><span>Log In/Sign Up</span></Link></div>}
-
-                    {/* <div className="user-signin"><Link onClick={manageSigInModal}><span>Log In/Sign Up</span></Link></div> */}
+                    </div> :<div className="user-signin"><Link to="" onClick={manageSigInModal}><span>Log In/Sign Up</span></Link></div>}
                     <div className="cart-logo"><AiOutlineShoppingCart/></div>
                     <div className="glob-logo"><AiOutlineGlobal/></div> 
                 </div>

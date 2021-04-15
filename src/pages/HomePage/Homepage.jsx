@@ -1,12 +1,15 @@
 import React from 'react';
-
-import Directory from '../../components/Hero/Hero';
+import Category from '../../components/Categories/Category';
+import Footer from '../../components/Footer/Footer';
+import Hero from '../../components/Hero/Hero';
 import './styles.scss';
 
 const Homepage = () => {
     return (
         <section className='hero-wrapper'>
-           <Directory  />
+           <Hero  />
+           <Category />
+           <Footer />
         </section>
     )
 }
