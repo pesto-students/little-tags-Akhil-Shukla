@@ -1,9 +1,37 @@
-import React from 'react';
+import React,{useState,useContext} from 'react';
 import {AiOutlineCloseCircle, AiFillFacebook} from 'react-icons/ai';
 import {FcGoogle} from 'react-icons/fc';
+import FirebaseContext from '../../firebase/context'
+
 import './styles.scss';
 
-export default function SignIn({manageSigInModal}){
+export default function SignIn(props){
+    const {manageSigInModal,manageLogo} = props
+    const firebase = useContext(FirebaseContext);
+  const [errorMessage, setErrorMessage] = useState('');
+  const handleGoogleSignIn = () => {
+    firebase
+      .doGoogleSignIn()
+      .then((authUser) => {
+        // console.log({ email: authUser.email, username: authUser.displayName });
+        console.log(authUser);
+        return firebase.user(authUser.user.uid).set({
+          email: authUser.user.email,
+          username: authUser.user.displayName,
+          roles: {},
+        });
+      })
+      .then(() => {
+        // props.history.push('/');
+        manageLogo();
+        manageSigInModal();
+      })
+      .catch((error) => {
+        setErrorMessage(error.message);
+      });
+  };
+
+
     return(
         <div className="signin-modal">
             <div className="modal-container">
@@ -18,7 +46,7 @@ export default function SignIn({manageSigInModal}){
                         Using
                    </div>
                    <div className="google-sigin">
-                        <span className="google-button"><FcGoogle /> Google</span>
+                        <span className="google-button" onClick={handleGoogleSignIn}><FcGoogle /> Google</span>
                    </div>
                    <div className="or">
                        Or
