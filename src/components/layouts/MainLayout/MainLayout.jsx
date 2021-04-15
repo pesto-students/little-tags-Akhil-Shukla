@@ -1,5 +1,5 @@
 import React, {useState,useContext} from 'react';
-import Header from '../../Header/Header';
+import Header from '../../header/Header';
 import SignIn from '../../Signin/Signin';
 import FirebaseContext from '../../../firebase/context';
 import './styles.scss';
