@@ -4,21 +4,21 @@ const categories = [
       title: "men clothing",
       catName: "menClothing",
       catImg:
-        "https://images.unsplash.com/photo-1446214814726-e6074845b4ce?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=376&q=80",
+        "https://images.unsplash.com/photo-1584940120743-8981ca35b012?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGZhc2hpb24lMjBtYW58ZW58MHwxfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
     },
     {
       id: 2,
       title: "women clothing",
       catName: "womenClothing",
       catImg:
-        "https://images.unsplash.com/photo-1571908598047-9b0049221e4e?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8bGFkaWVzJTIwd2VkZGluZyUyMGluZGlhfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=376&q=80",
+        "https://images.unsplash.com/photo-1599662875272-64de8289f6d8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhc2hpb258ZW58MHwxfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
     },
     {
       id: 3,
-      title: "jewelry",
-      catName: "jewelry",
+      title: "jewellery",
+      catName: "jewellery",
       catImg:
-        "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTN8fGpld2Vscnl8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=376&q=80",
+        "https://images.unsplash.com/flagged/photo-1570055349452-29232699cc63?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8andlbGxlcnl8ZW58MHwxfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
     },
     {
       id: 4,
