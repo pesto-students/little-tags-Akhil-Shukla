@@ -5,10 +5,11 @@ import FirebaseContext from '../../firebase/context'
 
 import './styles.scss';
 
-export default function SignIn(props) {
-  const { manageSigInModal, manageLogo } = props
-  const firebase = useContext(FirebaseContext);
-  const [ setErrorMessage] = useState('');
+export default function SignIn(props){
+    const {manageSigInModal,manageLogo} = props
+    const firebase = useContext(FirebaseContext);
+  const [ errorMessage,setErrorMessage] = useState('');
+
   const handleGoogleSignIn = () => {
     firebase
       .doGoogleSignIn()
