@@ -13,7 +13,7 @@ export default function Category(){
             <div className="categories-container">
                 { categories.map(({id,title,catName,catImg}) => (
                     <div className="category-card" key={id}>
-                        <Link to="" >
+                        <Link to={`/products/${catName}`} >
                             <Card id={id} title={title} catImg={catImg} />
                         </Link>
                     </div>
