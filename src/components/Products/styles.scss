@@ -37,18 +37,18 @@
   background-color: #fff;
 }
 
-// @media (max-width: 991px) {
-//   .el-wrapper {
-//     width: 345px;
-//   }
-// }
+@media (max-width: 991px) {
+  .el-wrapper {
+    width: 345px;
+  }
+}
 
-// @media (max-width: 767px) {
-//   .el-wrapper {
-//     width: 290px;
-//     margin: 30px auto;
-//   }
-// }
+@media (max-width: 767px) {
+  .el-wrapper {
+    width: 290px;
+    margin: 30px auto;
+  }
+}
 
 .el-wrapper:hover .h-bg {
   left: 0px;
