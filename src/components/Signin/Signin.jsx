@@ -5,17 +5,10 @@ import FirebaseContext from '../../firebase/context'
 
 import './styles.scss';
 
-<<<<<<< HEAD
 export default function SignIn(props) {
   const { manageSigInModal, manageLogo } = props
   const firebase = useContext(FirebaseContext);
   const [errorMessage, setErrorMessage] = useState('');
-=======
-export default function SignIn(props){
-    const {manageSigInModal,manageLogo} = props
-    const firebase = useContext(FirebaseContext);
-  const [ setErrorMessage] = useState('');
->>>>>>> e69263bb4c4c92b9b34ac28352a020b2cbad4020
   const handleGoogleSignIn = () => {
     firebase
       .doGoogleSignIn()
@@ -29,11 +22,8 @@ export default function SignIn(props){
         });
       })
       .then(() => {
-<<<<<<< HEAD
         // props.history.push('/');
         console.log(window.sessionStorage.getItem('userName'));
-=======
->>>>>>> e69263bb4c4c92b9b34ac28352a020b2cbad4020
         manageLogo();
         manageSigInModal();
       })
@@ -65,6 +55,7 @@ export default function SignIn(props){
           <div className="fb-sigin">
             <span className="fb-button"><AiFillFacebook /> Facebook</span>
           </div>
+        
         </div>
       </div>
     </div>
