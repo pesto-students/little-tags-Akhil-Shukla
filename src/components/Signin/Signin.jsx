@@ -8,7 +8,7 @@ import './styles.scss';
 export default function SignIn(props) {
   const { manageSigInModal, manageLogo } = props
   const firebase = useContext(FirebaseContext);
-  const [ setErrorMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
   const handleGoogleSignIn = () => {
     firebase
       .doGoogleSignIn()
@@ -55,6 +55,7 @@ export default function SignIn(props) {
           <div className="fb-sigin">
             <span className="fb-button"><AiFillFacebook /> Facebook</span>
           </div>
+        {errorMessage?<span>{errorMessage}</span>:null}
         </div>
       </div>
     </div>
