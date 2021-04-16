@@ -26,6 +26,11 @@ function Routes() {
               <ProductPage />
             </MainLayout>
           </Route>
+          <Route path="/products/:id">
+            <MainLayout>
+              <ProductPage />
+            </MainLayout>
+          </Route>
         </Switch>
   );
 }
