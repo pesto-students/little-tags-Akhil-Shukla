@@ -55,7 +55,7 @@ export default function SignIn(props) {
           <div className="fb-sigin">
             <span className="fb-button"><AiFillFacebook /> Facebook</span>
           </div>
-        
+        {errorMessage?<span>{errorMessage}</span>:null}
         </div>
       </div>
     </div>
