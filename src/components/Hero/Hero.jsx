@@ -9,12 +9,12 @@ const Directory = ({bgImage}) => {
         <div className="directory">
             <div className="wrap">
                 <div className="item" style={{backgroundImage: `url(${Bg1})`,backgroundPosition:'center'}}>
-                    <Link to="/">
+                    <Link to="/products/womenClothing">
                          <span>Shop Women</span> 
                     </Link>
                 </div>
                 <div className="item" style={{backgroundImage: `url(${Bg2})`, backgroundPosition:'top'}}>
-                    <Link to="/">
+                    <Link to="/products/menClothing">
                         <span>Shop Men</span>
                     </Link>
                 </div>
