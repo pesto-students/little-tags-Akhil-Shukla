@@ -8,7 +8,7 @@ import './styles.scss';
 export default function SignIn(props){
     const {manageSigInModal,manageLogo} = props
     const firebase = useContext(FirebaseContext);
-  const [ setErrorMessage] = useState('');
+  const [ errorMessage,setErrorMessage] = useState('');
   const handleGoogleSignIn = () => {
     firebase
       .doGoogleSignIn()
