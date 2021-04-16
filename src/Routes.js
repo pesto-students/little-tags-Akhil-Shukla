@@ -6,6 +6,7 @@ import MainLayout from './components/layouts/MainLayout/MainLayout';
 
 //pages
 import Homepage from "./pages/HomePage/Homepage";
+import ProductPage from "./pages/ProductPage/ProductPage";
 
 function Routes() {
   return (
@@ -15,7 +16,16 @@ function Routes() {
               <Homepage />
             </MainLayout>
           </Route>
-          
+          <Route exact path="/products">
+            <MainLayout>
+              <ProductPage />
+            </MainLayout>
+          </Route>
+          <Route path="/products/:category">
+            <MainLayout>
+              <ProductPage />
+            </MainLayout>
+          </Route>
         </Switch>
   );
 }

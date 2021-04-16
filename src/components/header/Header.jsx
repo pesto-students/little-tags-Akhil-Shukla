@@ -12,15 +12,19 @@ function Header({manageSigInModal,showLogo,handleSignOut}) {
             <header className="header">
                 <div className="wrap">
                     <div className="logo">
-                    <Link to="/" className="logo-link">
-                        <div>
-                            <img src={Logo} alt="apparel city" />
-                        </div>
-                    </Link>
+                        <Link to="/" className="logo-link">
+                            <div>
+                                <img src={Logo} alt="apparel city" />
+                            </div>
+                        </Link>
+                    </div>
+                    <div className="navigation-links">
+                        <Link to="/products">Products</Link>
+                        <Link to="">WishList</Link>
                     </div>
                     <div className="search-input">
-                    <span><AiOutlineSearch/></span>
-                    <input type="text" placeholder="Search..."></input>
+                        <span><AiOutlineSearch/></span>
+                        <input type="text" placeholder="Search..."></input>
                     </div>
                     {showLogo?<div className="user-logo">
                     <AiOutlineUser/>
@@ -30,7 +34,6 @@ function Header({manageSigInModal,showLogo,handleSignOut}) {
                     <div className="order-history">
                         <div className="order-history-content">history</div>
                         <div className="order-history-content">contact</div>
-
                     </div>
 
                     </span>
