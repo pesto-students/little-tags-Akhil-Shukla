@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React from 'react';
 import Category from '../../components/Categories/Category';
 import Footer from '../../components/Footer/Footer';
 import Hero from '../../components/Hero/Hero';

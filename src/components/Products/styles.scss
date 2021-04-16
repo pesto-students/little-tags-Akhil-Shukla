@@ -27,7 +27,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
-  justify-content: space-evenly;
+  justify-content: flex-start;
 }
 
 .el-wrapper {
@@ -37,18 +37,18 @@
   background-color: #fff;
 }
 
-// @media (max-width: 991px) {
-//   .el-wrapper {
-//     width: 345px;
-//   }
-// }
+@media (max-width: 991px) {
+  .el-wrapper {
+    width: 345px;
+  }
+}
 
-// @media (max-width: 767px) {
-//   .el-wrapper {
-//     width: 290px;
-//     margin: 30px auto;
-//   }
-// }
+@media (max-width: 767px) {
+  .el-wrapper {
+    width: 290px;
+    margin: 30px auto;
+  }
+}
 
 .el-wrapper:hover .h-bg {
   left: 0px;
@@ -72,19 +72,6 @@
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-}
-
-.el-wrapper:hover .img {
-  --webkit-filter: blur(7px);
-  -o-filter: blur(7px);
-  -ms-filter: blur(7px);
-  filter: blur(7px);
-  filter: progid:DXImageTransform.Microsoft.Blur(pixelradius='7', shadowopacity='0.0');
-  opacity: 0.4;
-}
-
-.el-wrapper:hover .info-inner {
-  bottom: 155px;
 }
 
 .el-wrapper:hover .a-size {
@@ -161,7 +148,6 @@
   /* ease-out */
   position: absolute;
   width: 100%;
-  bottom: 25px;
 }
 
 .info-inner .p-name,

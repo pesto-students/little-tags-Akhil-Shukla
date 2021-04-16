@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {FaCartPlus} from 'react-icons/fa';
+import PropTypes from 'prop-types';
 import './styles.scss';
 
 export default function ProductCard({id, title, price, image, category}){
@@ -29,4 +30,11 @@ export default function ProductCard({id, title, price, image, category}){
         </div>
       </Link>
     )
+}
+
+ProductCard.prototype = {
+  id:PropTypes.number.isRequired,
+  title:PropTypes.string.isRequired,
+  price:PropTypes.string.isRequired,
+  category:PropTypes.string.isRequired
 }
