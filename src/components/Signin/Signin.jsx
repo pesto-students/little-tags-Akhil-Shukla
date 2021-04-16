@@ -9,6 +9,7 @@ export default function SignIn(props){
     const {manageSigInModal,manageLogo} = props
     const firebase = useContext(FirebaseContext);
   const [ errorMessage,setErrorMessage] = useState('');
+
   const handleGoogleSignIn = () => {
     firebase
       .doGoogleSignIn()
@@ -22,6 +23,8 @@ export default function SignIn(props){
         });
       })
       .then(() => {
+        // props.history.push('/');
+        console.log(window.sessionStorage.getItem('userName'));
         manageLogo();
         manageSigInModal();
       })
