@@ -29,7 +29,7 @@ export default function Products(){
             <div className="page-inner">
                 {filteredProducts.map(({id,title, price,image}) => (
                     <div className="row" key={id}>
-                        <ProductCard id={id} title={title} price={price} image={image} category={category} />
+                       <ProductCard id={id} title={title} price={price} image={image} category={category} />
                     </div>
                 ))}
             </div>

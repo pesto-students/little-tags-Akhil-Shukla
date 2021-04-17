@@ -34,7 +34,7 @@ const MainLayout = ({children}) => {
     return(
         <div className={`mainLayout-div layout-${showSignIn}`}>
             
-            <Header manageSigInModal={manageSigInModal} showSignIn={showSignIn} showLogo={showLogo} handleSignOut={handleSignOut} manageProduct={manageProduct} />
+            <Header manageSigInModal={manageSigInModal} showSignIn={showSignIn} showLogo={showLogo} handleSignOut={handleSignOut}  />
             
             <div className="main">
             

@@ -5,7 +5,7 @@ import { AiOutlineShoppingCart, AiOutlineUser, AiOutlineGlobal, AiOutlineSearch 
 import { Link } from 'react-router-dom'
 
 
-function Header({ manageSigInModal, showLogo, handleSignOut,manageProduct }) {
+function Header({ manageSigInModal, showLogo, handleSignOut }) {
     const displayName = window.sessionStorage.getItem('userName')
 
     return (
@@ -19,7 +19,7 @@ function Header({ manageSigInModal, showLogo, handleSignOut,manageProduct }) {
                         </div>
                     </Link>
                 </div>
-                <span><Link onClick={manageProduct}>product</Link></span>
+                
                 <div className="search-input">
                     <span><AiOutlineSearch /></span>
                     <input type="text" placeholder="Search..."></input>

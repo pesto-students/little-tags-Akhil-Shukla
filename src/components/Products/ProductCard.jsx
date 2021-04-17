@@ -5,7 +5,7 @@ import './styles.scss';
 
 export default function ProductCard({id, title, price, image, category}){
     return(
-      <Link to="">
+      <Link to={`/productsdiscription/${id}`}>
         <div className="el-wrapper">
           <div className="box-up">
             <div className="img" style={{backgroundImage:`url(${image})`}}></div>
