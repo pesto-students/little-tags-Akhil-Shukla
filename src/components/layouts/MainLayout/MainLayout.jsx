@@ -1,5 +1,6 @@
 import React, {useState,useContext} from 'react';
 import Header from '../../header/Header';
+import Modal from '../../Modal/Modal';
 import SignIn from '../../Signin/Signin';
 import ProductDescription from '../../productDescription/ProductDescription'
 import FirebaseContext from '../../../firebase/context';
@@ -12,7 +13,7 @@ const MainLayout = ({children}) => {
     const [showProduct,setShowProduct] = useState(false);
     
 
-    const manageSigInModal = () => {
+    const manageModal = () => {
         setShowSignIn(!showSignIn);
     }
 
@@ -34,7 +35,7 @@ const MainLayout = ({children}) => {
     return(
         <div className={`mainLayout-div layout-${showSignIn}`}>
             
-            <Header manageSigInModal={manageSigInModal} showSignIn={showSignIn} showLogo={showLogo} handleSignOut={handleSignOut} manageProduct={manageProduct} />
+            <Header manageSigInModal={manageModal} showSignIn={showSignIn} showLogo={showLogo} handleSignOut={handleSignOut} manageProduct={manageProduct} />
             
             <div className="main">
             
@@ -42,9 +43,9 @@ const MainLayout = ({children}) => {
                 
             </div>
             
-            {showSignIn?<SignIn manageSigInModal={manageSigInModal} showSignIn={showSignIn} manageLogo={manageLogo} />:null}
+            {showSignIn?<Modal manageModal={manageModal}><SignIn manageModal={manageModal} showSignIn={showSignIn} manageLogo={manageLogo} /></Modal>:null}
             
-           {showProduct?<ProductDescription manageProduct={manageProduct} />:null}
+           {showProduct?<Modal manageModal={manageProduct}><ProductDescription manageProduct={manageProduct} /></Modal>:null}
 
         </div>
         
