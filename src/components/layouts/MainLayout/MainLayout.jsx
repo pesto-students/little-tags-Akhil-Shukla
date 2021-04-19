@@ -2,7 +2,7 @@ import React, {useState,useContext} from 'react';
 import Header from '../../header/Header';
 import Modal from '../../Modal/Modal';
 import SignIn from '../../Signin/Signin';
-import ProductDescription from '../../ProductDescription/ProductDescription'
+import ProductDescription from '../../productDescription/ProductDescription'
 import FirebaseContext from '../../../firebase/context';
 import './styles.scss';
 
