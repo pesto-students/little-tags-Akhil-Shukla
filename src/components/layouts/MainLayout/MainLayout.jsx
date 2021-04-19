@@ -1,5 +1,5 @@
 import React, {useState,useContext} from 'react';
-import Header from '../../Header/Header';
+import Header from '../../header/Header';
 import Modal from '../../Modal/Modal';
 import SignIn from '../../Signin/Signin';
 import ProductDescription from '../../ProductDescription/ProductDescription'
