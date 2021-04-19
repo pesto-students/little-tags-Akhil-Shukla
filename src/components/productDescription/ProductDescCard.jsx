@@ -6,7 +6,7 @@ import { IoIosStarOutline } from "react-icons/io";
 import './styles.scss'
 
 function ProductDescCard(props) {
-    const { title, price, image, category, description } = props;
+    const { title, price, image, description } = props;
     const [size, setSize] = useState('M');
     const [quantity, setQuantity] = useState(0);
     const options = ['SM', 'M', 'L', 'XL']
