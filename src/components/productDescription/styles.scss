@@ -1,5 +1,121 @@
-.product-description-modal{
+.product-discriptionl{
+  display: flex;
+  flex-direction: row;
   margin: 0 auto;
   position: absolute;
-  z-index: 9;
+  
   }
+
+.product-desc-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding:40px;
+  .product-desc-items{
+    max-width: 50%;
+    // padding:40px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    .price{
+      padding-top:10px;
+      padding-bottom: 10px;
+      vertical-align: center;
+      .dolaricons{
+        position:absolute;
+        top:50px;
+        padding:20px;
+        vertical-align: center;
+
+      }
+      
+    }
+
+    .title{
+      font-weight: bold;
+      font-size: larger;
+    }
+    .description{
+      padding-top:10px;
+      font-family: Cambria;
+      font-size: 15px;
+      font-weight: normal;
+      line-height: 1.6;
+    }
+    .size-quantity{
+      display: flex;
+      flex-direction: row;
+      // justify-content: space-between;
+      .size{
+        display: flex;
+        flex-direction: row;
+        padding-top: 20px;
+        padding-left: 40px;
+        padding-bottom: 10px;
+        position:relative;
+        p{
+          position:absolute;
+          top:15px;
+          left: 0;
+        }
+        select{
+          height: 40px;
+          width: 50px;
+          border:1px solid blue;
+          border-radius: 4px;
+        }
+      }
+      .quantity{
+        display: flex;
+        flex-direction: row;
+        padding-left: 80px;
+        margin-left: 40px;
+        padding-top: 20px;
+        padding-bottom: 10px;
+        position:relative;
+        p{
+          position:absolute;
+          top:15px;
+          left: 0;
+        }
+        input[type=number]{
+          height: 40px;
+          width: 50px;
+          border:1px solid blue;
+          border-radius: 4px;
+        }
+      }
+      
+    }
+    .cart-button{
+      margin-left: 20px;
+      height:50px;
+      font-size : 15px;
+      background-color:#24a0ed;
+      color:white;
+      border-radius: 5px;
+    }
+
+    .wish-button{
+      margin-left: 50px;
+      height:50px;
+      font-size : 15px;
+      background-color:#24a0ed;
+      color:white;
+      border-radius: 5px;
+    }
+    
+      
+      
+    
+  }
+
+
+}
+
+  product-desc-card{
+    max-width: 50%;
+    max-width: 100%;
+  } 
