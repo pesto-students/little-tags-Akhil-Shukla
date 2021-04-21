@@ -8,6 +8,7 @@ import MainLayout from './components/layouts/MainLayout/MainLayout';
 import Homepage from "./pages/HomePage/Homepage";
 import ProductPage from "./pages/ProductPage/ProductPage";
 import PrductDescriptionPage from "./pages/ProductDescriptionPage/ProductDescriptionPage"
+import CartPage from './pages/CartPage/CartPage'
 
 function Routes() {
   return (
@@ -25,6 +26,11 @@ function Routes() {
           <Route  path="/productsdiscription/:productId">
             <MainLayout>
             <PrductDescriptionPage />
+            </MainLayout>
+          </Route>
+          <Route  path="/cart">
+            <MainLayout>
+            <CartPage />
             </MainLayout>
           </Route>
         </Switch>

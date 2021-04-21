@@ -49,7 +49,7 @@ function Header({ manageSigInModal, showLogo, handleSignOut }) {
 
                     </span>
                 </div> : <div className="user-signin"><Link to="" onClick={manageSigInModal}><span>Log In/Sign Up</span></Link></div>}
-                <div className="cart-logo"><AiOutlineShoppingCart /></div>
+                <div className="cart-logo"><Link to="/cart"><AiOutlineShoppingCart color='black' /></Link></div>
                 <div className="glob-logo"><AiOutlineGlobal /></div>
             </div>
         </header>
