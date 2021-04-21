@@ -1,0 +1,28 @@
+.wishlist-container {
+  display: flex;
+  flex-direction: column;
+
+  .wishList-header {
+    height: 5rem;
+    font-size: 3.2rem;
+    margin: 1.1rem;
+    font-weight: 800;
+
+    .product-count {
+      font-size: 2.6rem;
+      color: rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  .wishList-body {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: flex-start;
+
+    .wishlist-row {
+      box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.4);
+      margin: 1.4rem;
+    }
+  }
+}

@@ -19,7 +19,9 @@ function Header({ manageSigInModal, showLogo, handleSignOut }) {
                         </div>
                     </Link>
                 </div>
-                
+                <div className="navigation-links">
+                    <Link to="/wishlist">WishList</Link>
+                </div>
                 <div className="search-input">
                     <span><AiOutlineSearch /></span>
                     <input type="text" placeholder="Search..."></input>

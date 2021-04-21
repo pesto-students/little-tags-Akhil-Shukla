@@ -13,6 +13,14 @@
   justify-content: flex-end;
   align-items: center;
 
+  .navigation-links {
+    margin-right: 10%;
+    font-weight: 600;
+    a {
+      color: black;
+    }
+  }
+
   .logo {
     justify-content: flex-start;
     width: 13rem;
@@ -43,14 +51,12 @@
     top: 0%;
     border-radius: 5px;
     margin-right: 50px;
-    
 
     span {
       position: absolute;
       top: 20%;
       font-size: 25px;
       margin-left: 10px;
-
     }
     input[type="text"] {
       height: 40px;
@@ -79,48 +85,43 @@
     text-align: center;
     position: relative;
 
-
-
-    .user-logout-options{
-      
+    .user-logout-options {
       display: none;
       position: absolute;
       text-align: left;
-      
-      left:-100%;
+
+      left: -100%;
       background-color: white;
       min-width: 200px;
       min-height: 250px;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);
-      
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.6);
+
       // padding: 10px 5px;
       z-index: 10;
       border-radius: 7px;
 
-      .display-name{
+      .display-name {
         font-size: 15px;
         font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-        color : black;
-        padding-left:10px;
-        padding-top:20px;
+        color: black;
+        padding-left: 10px;
+        padding-top: 20px;
         text-align: left;
         // margin-top: 20px;
       }
 
-      .log-out-button{
+      .log-out-button {
         padding-left: 40px;
-        button{
-        margin-bottom: 10px;
-        background-color:lightblue;
-        border-radius: 5px;
-        color:white;
-        height: 40px;
-        width: 100px;
-        
-        
+        button {
+          margin-bottom: 10px;
+          background-color: lightblue;
+          border-radius: 5px;
+          color: white;
+          height: 40px;
+          width: 100px;
         }
       }
-      .order-history{
+      .order-history {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -128,61 +129,50 @@
         position: relative;
         font-size: medium;
         width: 100%;
-        .order-history-content{
+        .order-history-content {
           color: black;
           padding: 5px 10px 10px 10px;
           text-decoration: none;
           display: block;
-          
-          a{
+
+          a {
             color: black;
           }
         }
-
       }
     }
-
-
   }
   // .user-logo:hover .user-logout-options {
   //   display: block;
   //   color:red;
   // }
 
-  .user-logo:hover .user-logout-options{
+  .user-logo:hover .user-logout-options {
     display: block;
-    
   }
 
   .log-out-button button:hover {
-    background-color:lightcoral;
+    background-color: lightcoral;
     box-shadow: 2px 2px 2px 2px rgba($color: #000000, $alpha: 0.3);
   }
 
-  .order-history .order-history-content a:hover{
+  .order-history .order-history-content a:hover {
     font-weight: bold;
     font-size: medium;
-    
   }
-
-  
 
   // .order-history .order-history-content:hover{
   //   color:yellowgreen;
   // }
 
-
-
-
   .glob-logo {
     font-size: 25px;
     padding-right: 40px;
-    
   }
   .user-signin {
     // padding-right: 40px;
     // padding-left: 40px;
-    
+
     span {
       color: var(--header-font-color);
     }
