@@ -13,6 +13,14 @@
   justify-content: flex-end;
   align-items: center;
 
+  .navigation-links {
+    margin-right: 10%;
+    font-weight: 600;
+    a {
+      color: black;
+    }
+  }
+
   .logo {
     justify-content: flex-start;
     width: 13rem;

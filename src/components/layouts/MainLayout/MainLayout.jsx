@@ -10,7 +10,7 @@ const MainLayout = ({children}) => {
     const [showSignIn, setShowSignIn] = useState(false);
     const [showLogo, setShowLogo] =useState(false);
     const firebase= useContext(FirebaseContext);
-    const [showProduct,setShowProduct] = useState(false);
+    // const [showProduct,setShowProduct] = useState(false);
     
 
     const manageModal = () => {
@@ -21,11 +21,11 @@ const MainLayout = ({children}) => {
         setShowLogo(!showLogo);
     }
 
-    const manageProduct = () => {
-        setShowProduct(!showProduct);
-        console.log('manageproduct')
-        console.log(showProduct);
-    }
+    // const manageProduct = () => {
+    //     setShowProduct(!showProduct);
+    //     console.log('manageproduct')
+    //     console.log(showProduct);
+    // }
 
     const handleSignOut = () => {
         firebase.doSignOut();
@@ -45,7 +45,7 @@ const MainLayout = ({children}) => {
             
             {showSignIn?<Modal manageModal={manageModal}><SignIn manageModal={manageModal} showSignIn={showSignIn} manageLogo={manageLogo} /></Modal>:null}
             
-           {showProduct?<Modal manageModal={manageProduct}><ProductDescription manageProduct={manageProduct} /></Modal>:null}
+           {/* {showProduct?<Modal manageModal={manageProduct}><ProductDescription manageProduct={manageProduct} /></Modal>:null} */}
 
         </div>
         
