@@ -4,7 +4,7 @@ import Logo from "../../assets/logo.png";
 import { AiOutlineShoppingCart, AiOutlineUser, AiOutlineGlobal, AiOutlineSearch } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { useSelector } from "react-redux";
-import store from '../../store';
+// import store from '../../store';
 
 
 

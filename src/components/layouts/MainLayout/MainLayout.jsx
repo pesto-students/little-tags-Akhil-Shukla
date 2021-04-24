@@ -1,9 +1,9 @@
-import React, {useState,useContext,useEffect} from 'react';
-import store from '../../../store';
+import React, {useState,useContext} from 'react';
+// import store from '../../../store';
 import Header from '../../Header/Header';
 import Modal from '../../Modal/Modal';
 import SignIn from '../../Signin/Signin';
-import ProductDescription from '../../ProductDescription/ProductDescription'
+// import ProductDescription from '../../ProductDescription/ProductDescription'
 import FirebaseContext from '../../../firebase/context';
 import './styles.scss';
 
@@ -13,13 +13,11 @@ const MainLayout = ({children}) => {
     const [showLogo, setShowLogo] =useState(false);
     const firebase= useContext(FirebaseContext);
     // const [showProduct,setShowProduct] = useState(false);
-    let [cartItemLength,setCartItemLenght]=useState(0);
-    let len=store.getState().cartState.items.length;
+    
+    
     
 
-    const setItemLenght = (val) => {
-        setCartItemLenght(val);
-    }
+    
     
 
     const manageModal = () => {
@@ -44,7 +42,7 @@ const MainLayout = ({children}) => {
     return(
         <div className={`mainLayout-div layout-${showSignIn}`}>
             
-            <Header manageSigInModal={manageModal} showSignIn={showSignIn} showLogo={showLogo} handleSignOut={handleSignOut} cartItemLength={cartItemLength} />
+            <Header manageSigInModal={manageModal} showSignIn={showSignIn} showLogo={showLogo} handleSignOut={handleSignOut}  />
             
             <div className="main">
             

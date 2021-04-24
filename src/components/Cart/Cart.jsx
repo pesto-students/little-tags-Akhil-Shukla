@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import store from '../../store';
 import { removeFromCart } from '../../Actions/CartActions';
 import CartItem from './CartItem';

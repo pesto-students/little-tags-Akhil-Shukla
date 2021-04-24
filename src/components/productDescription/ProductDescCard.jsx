@@ -10,7 +10,7 @@ import { addToWishList } from '../../Actions/WishlistActions';
 import {addToCart} from '../../Actions/CartActions';
 
 function ProductDescCard(props) {
-    const { id, title, price, image, description, category, showSize } = props;
+    const { id, title, price, image, description, category } = props;
     const [size, setSize] = useState('M');
     const [quantity, setQuantity] = useState(0);
     const options = ['SM', 'M', 'L', 'XL']

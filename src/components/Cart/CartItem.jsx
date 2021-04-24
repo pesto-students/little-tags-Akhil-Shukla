@@ -4,11 +4,11 @@ import { BiDollar } from "react-icons/bi";
 import './styles.scss';
 
 function CartItem(props) {
-    const { id, title, price, image, category, handleRemoveFromCart } = props;
+    const { id, title, price, image, handleRemoveFromCart } = props;
     return (
         <div className="cart-item-child">
             <div className="cart-item-data">
-                <img src={image}></img>
+                <img src={image} alt='product'></img>
             </div>
             <div className="cart-item-data">
                 <b>{title}</b>
