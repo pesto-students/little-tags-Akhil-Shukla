@@ -14,12 +14,6 @@ const MainLayout = ({children}) => {
     const firebase= useContext(FirebaseContext);
     // const [showProduct,setShowProduct] = useState(false);
     
-    
-    
-
-    
-    
-
     const manageModal = () => {
         setShowSignIn(!showSignIn);
     }

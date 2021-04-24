@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import store from '../../store';
 import { removeFromCart } from '../../Actions/CartActions';
 import CartItem from './CartItem';
+import PriceDetails from './PriceDetails'
 import { HiOutlineShoppingBag } from 'react-icons/hi';
 import { GoLocation } from 'react-icons/go';
 import { MdPayment } from 'react-icons/md';
@@ -22,6 +23,7 @@ function Cart() {
         if (cartStore) {
             setCartItems(cartStore);
         }
+        
 
     }, [cartStore])
 
@@ -58,10 +60,10 @@ function Cart() {
             </div>
             <div className="cart-items-container">
                 <div className="cart-item">
-                    {cartItems.map(({ id, title, price, image }) => (
+                    {cartItems.map(({ id, title, price, image ,quantity,size}) => (
 
                         <div key={id}>
-                            <CartItem id={id} title={title} price={price} image={image} handleRemoveFromCart={handleRemoveFromCart} />
+                            <CartItem id={id} title={title} price={price} image={image} quantity={quantity} size={size} handleRemoveFromCart={handleRemoveFromCart} />
                         </div>
 
 
@@ -106,47 +108,7 @@ function Cart() {
                         </div>
                     </div>
                     <div className="price">
-                        <div style={{ fontSize: '20px', paddingTop: '10px' }}>Price Details</div>
-                        <div className="p-inner">
-
-                            <div className="p-1">
-
-                                <div>
-                                    Total MRP
-                                </div>
-                                <div>$75.59</div>
-
-                            </div>
-
-                            <div className="p-1">
-
-                                <div>
-                                    Discount on MRP
-                                </div>
-                                <div>-$-36.39</div>
-
-                            </div>
-
-                            <div className="p-1">
-
-                                <div>
-                                    Coupon Discount
-                                </div>
-                                <div>No</div>
-
-                            </div>
-
-                            <div className="hrline"></div>
-
-                            <div className="p-1">
-
-                                <div>
-                                    Total
-                                </div>
-                                <div>$55.99</div>
-
-                            </div>
-                        </div>
+                        <PriceDetails itemList={cartItems} />
 
 
                     </div>

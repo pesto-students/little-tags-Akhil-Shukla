@@ -12,11 +12,13 @@ import {addToCart} from '../../Actions/CartActions';
 function ProductDescCard(props) {
     const { id, title, price, image, description, category } = props;
     const [size, setSize] = useState('M');
-    const [quantity, setQuantity] = useState(0);
+    const [quantity, setQuantity] = useState(1);
     const options = ['SM', 'M', 'L', 'XL']
 
 
     const onInputChange = event => setQuantity(event.target.value)
+
+    const onSizeChange = event => setSize(event.target.value)
 
 
     const handleAddToWishList = () => {
@@ -29,7 +31,7 @@ function ProductDescCard(props) {
 
     const handleAddToCart = () => {
         const data  = {
-            id, title, price,image,description, category
+            id, title, price,image,description, category,size,quantity
         };
         store.dispatch(addToCart(data,id));
 
@@ -62,7 +64,7 @@ function ProductDescCard(props) {
                 <div className="size-quantity">
                     <div className="size">
                         <p>Size</p>
-                        <select name='selectedOption' onChange={setSize} >
+                        <select name='selectedOption' onChange={onSizeChange} >
                             {options.map(i => i === size ? (
                                 <option value={i} selected>
                                     {i}
