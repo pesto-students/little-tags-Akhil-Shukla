@@ -1,4 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import store from '../../store';
+import { removeFromCart } from '../../Actions/CartActions';
+import CartItem from './CartItem';
 import { HiOutlineShoppingBag } from 'react-icons/hi';
 import { GoLocation } from 'react-icons/go';
 import { MdPayment } from 'react-icons/md';
@@ -7,7 +11,29 @@ import { AiFillGift } from 'react-icons/ai';
 import './styles.scss';
 
 
+
+
 function Cart() {
+    const cartStore = store.getState().cartState.items;
+    // store.getState().cartState.items=[]
+    const [cartItems, setCartItems] = useState([]);
+
+    useEffect(() => {
+        if (cartStore) {
+            setCartItems(cartStore);
+        }
+
+    }, [cartStore])
+
+    const handleRemoveFromCart = (id) => {
+        store.dispatch(removeFromCart(id));
+        setCartItems(store.getState().cartState.items);
+    }
+
+    if (cartItems.length === 0) {
+        return (<div>cart empty</div>)
+    }
+
     return (
         <div className="cart-container">
             <div className="cart">
@@ -23,7 +49,7 @@ function Cart() {
                         <GoLocation />
                     </div>
 
-                    
+
                     <div className="pay-icon">
                         <MdPayment />
                     </div>
@@ -32,9 +58,14 @@ function Cart() {
             </div>
             <div className="cart-items-container">
                 <div className="cart-item">
-                    <section>
+                    {cartItems.map(({ id, title, price, image }) => (
 
-                    </section>
+                        <div key={id}>
+                            <CartItem id={id} title={title} price={price} image={image} handleRemoveFromCart={handleRemoveFromCart} />
+                        </div>
+
+
+                    ))}
                 </div>
                 <div className="coupon-price">
                     <div className="coupons">

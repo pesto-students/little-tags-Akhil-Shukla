@@ -16,7 +16,7 @@
             // top:40px;
             // padding:40px 0px 0px 40px;
             margin-top:16px;
-            border:1px solid black;
+            border:.1px solid rgba($color: #000000, $alpha: 0.1);
             left: 230px;
             width: 800px ;
    
@@ -61,7 +61,8 @@
     .cart-items-container{
         display: flex;
         width: 100%;
-        max-height: 100%;
+        // max-height: 100%;
+        
         max-width: 100%;
         // margin-left: 20px;
         // padding:120px 200px 0px 200px;
@@ -71,25 +72,30 @@
         padding-left:200px;
         padding-right: 200px;
         // border:1px solid black;
-        box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.3);
+        
 
         .cart-item{
             // padding:0px 40px 20px 20px;
             
-            // border:1px solid black;
-            height: 500px;
+            border:.1px solid rgba($color: #000000, $alpha: 0.1);
+            display: flex;
+            flex-direction: column;
+            // height: 500px;
             width: 100%;
             border-radius: 5px;
-            box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.3);
+            // border: rgba($color: #000000, $alpha: 0.5);
+            // box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.3);
             // box-shadow: 2px 2px 2px 2px;
+            // overflow: scroll;
         }
         .coupon-price{
-            height: 500px;
+            // height: 500px;
             width: 35%;
             // border:1px solid black;
             border-radius: 5px;
             // box-shadow: 2px 2px 2px 2px;
-            box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.3);
+            // box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.3);
+            border:.1px solid rgba($color: #000000, $alpha: 0.1);
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
@@ -99,7 +105,9 @@
                 padding: 3px;
                 // width: 100%;
                 // height: 100px;
-                border:.5px solid black;
+                // border:.5px;
+                // border-style: groove;
+                border:.1px solid rgba($color: #000000, $alpha: 0.1);
                 border-radius: 5px;
                 // box-shadow: 2px 2px 2px 2px;
                 .coupon-text{
@@ -163,7 +171,8 @@
                 height: 100px;
                 // border:1px solid black;
                 border-radius: 5px;
-                box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.6);
+                border:.1px solid rgba($color: #000000, $alpha: 0.1);
+                // box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.6);
                 // box-shadow: 2px 2px 2px 2px;
                 .gift-head{
                     top: 0;
@@ -201,7 +210,8 @@
                 // border:1px solid black;
                 border-radius: 5px;
                 // box-shadow: 1px 2px 0px 1px;
-                box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+                // box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+                border:.1px solid rgba($color: #000000, $alpha: 0.1);
                 .p-inner{
                     // border: 1px solid red;
                     padding:10px;
@@ -228,7 +238,8 @@
                 // border:1px solid black;
                 border-radius: 5px;
                 // box-shadow: 2px 2px 2px 2px;
-                box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+                // box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+                border:.1px solid rgba($color: #000000, $alpha: 0.1);
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -258,3 +269,78 @@
 }
 
 
+
+.cart-item-child{
+    
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    // justify-content: space-evenly;
+    // padding:10px;
+    margin-bottom:15px;
+    align-items: center;
+    flex-grow: 1;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+    // border-style: groove;
+    // border:.1px grey;
+    border:.1px solid rgba($color: #000000, $alpha: 0.1);
+    border-radius: 5px;
+    .cart-item-data{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-grow:2 ;
+        font-size: 15px;
+        // font-weight: bold;
+        width: 100px;
+        height: 150px;
+        .md{
+            display: flex;
+            flex-direction: row;
+        }
+        img{
+            width: 75px;
+            height: 110px;
+            
+        }
+        button{
+            width: 50%;
+            height: 30%;
+            margin-top:12px;
+            color:#448df0;
+            border-radius: 5px;
+            border:1px solid#b1d9f9;
+            background-color: transparent;
+            font-size: 15px;
+            box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+            &:hover{
+                background-color:#448df0;
+                color:white;    
+            }
+        }
+        .pwd{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+        .price{
+            // padding-left: 10px;
+            text-decoration:line-through;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            color: rgba($color: #000000, $alpha: 0.5);
+        }
+        .discount{
+            margin-left: 10px;
+            text-decoration: none;
+            font-size: 1.4rem;
+            color: rgba($color: royalBlue, $alpha: 0.8);
+        }
+        
+    }
+}

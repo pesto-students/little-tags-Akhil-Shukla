@@ -79,6 +79,20 @@
     font-size: 25px;
     padding-right: 40px;
     padding-left: 50px;
+    position: relative;
+    .store-count{
+      position:absolute;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      padding-top: 2px;
+      background-color:red;
+      color:white;
+      font-size: 15px;
+      top:0;
+      text-align: center;
+
+    }
   }
   .user-logo {
     font-size: 25px;

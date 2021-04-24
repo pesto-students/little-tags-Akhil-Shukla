@@ -7,6 +7,7 @@ import { IoIosStarOutline } from "react-icons/io";
 import './styles.scss';
 import store from '../../store/index';
 import { addToWishList } from '../../Actions/WishlistActions';
+import {addToCart} from '../../Actions/CartActions';
 
 function ProductDescCard(props) {
     const { id, title, price, image, description, category, showSize } = props;
@@ -25,11 +26,19 @@ function ProductDescCard(props) {
         store.dispatch(addToWishList(data,id));
 
     }
+
+    const handleAddToCart = () => {
+        const data  = {
+            id, title, price,image,description, category
+        };
+        store.dispatch(addToCart(data,id));
+
+    }
     
     return (
         <>
         <div className="product-page-header">
-            <span><Link to="/">HOME</Link>  / <Link to={`/products/${category}`}>{category.toUpperCase()} </Link> / <span style={{fontWeight:500}}>{title}</span></span>
+            <span><Link to="/" style={{fontSize:'20px'}}>HOME</Link>  / <Link to={`/products/${category}`} style={{fontSize:'20px'}}>{category.toUpperCase()} </Link> / <span style={{fontWeight:500,fontSize:'20px'}}>{title}</span></span>
         </div>
         <div className="product-desc-container">
             <div className="product-desc-items">
@@ -66,10 +75,10 @@ function ProductDescCard(props) {
                         <input type="number" value={quantity} onChange={onInputChange}></input>
                     </div>
                 </div>
-
+                <div className="hr-line"></div>
                 <div className="buttons">
-                    <hr></hr>
-                    <button className="cart-button"><BiShoppingBag /> &nbsp;Add to Cart</button>
+                    
+                    <button className="cart-button" onClick={handleAddToCart}><BiShoppingBag /> &nbsp;Add to Cart</button>
                     <button className="wish-button" onClick={handleAddToWishList}> <BsHeartFill /> &nbsp;WishList</button>
                 </div>
 

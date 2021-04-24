@@ -1,6 +1,7 @@
 .wishlist-container {
     display: flex;
     flex-direction: column;
+    overflow: scroll;
   
     .wishList-header {
       height: 5rem;

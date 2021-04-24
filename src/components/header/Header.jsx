@@ -1,12 +1,18 @@
 import React from 'react'
 import "./Header.scss"
 import Logo from "../../assets/logo.png";
-import { AiOutlineShoppingCart, AiOutlineUser, AiOutlineGlobal, AiOutlineSearch } from 'react-icons/ai'
-import { Link } from 'react-router-dom'
+import { AiOutlineShoppingCart, AiOutlineUser, AiOutlineGlobal, AiOutlineSearch } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
+import { useSelector } from "react-redux";
+import store from '../../store';
 
 
-function Header({ manageSigInModal, showLogo, handleSignOut }) {
-    const displayName = window.sessionStorage.getItem('userName')
+
+
+function Header({ manageSigInModal, showLogo, handleSignOut,cartItemLength }) {
+    const displayName = window.sessionStorage.getItem('userName');
+    const itemInCart = useSelector(store => store.cartState.items);
+    
 
     return (
 
@@ -52,7 +58,7 @@ function Header({ manageSigInModal, showLogo, handleSignOut }) {
 
                     </span>
                 </div> : <div className="user-signin"><Link to="" onClick={manageSigInModal}><span>Log In/Sign Up</span></Link></div>}
-                <div className="cart-logo"><Link to="/cart"><AiOutlineShoppingCart color='black' /></Link></div>
+                <div className="cart-logo"><Link to="/cart"><AiOutlineShoppingCart color='black' />{itemInCart.length > 0  ? <span className="store-count">{itemInCart.length}</span> : null}</Link></div>
                 <div className="glob-logo"><AiOutlineGlobal /></div>
             </div>
         </header>
