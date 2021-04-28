@@ -14,7 +14,9 @@ const CartReducer = (state=initialState, action) => {
     switch(action.type){
         case actions.ADD_TO_BAG:{
             const {data, id} = action.payload;
+            console.log(typeof state.items)
             state.items = removeItem(state.items, id);
+            
             const stateData = {...state, items:[...state.items, data]};
             localStorage.setItem(actions.CART_ITEM, JSON.stringify(stateData.items));
             return stateData;

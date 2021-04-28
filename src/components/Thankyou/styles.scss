@@ -1,0 +1,90 @@
+.checkout-cont{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+}
+
+
+.cart-container{
+    height: 100%;
+    width: 100%;
+    position: relative;
+ 
+ 
+    
+    
+     .cart{
+         padding: 40px 200px 40px 200px;
+         max-height: 150px;
+         max-width: 100%;
+         
+         
+         
+         .bag-add-pay{
+             display: flex;
+             flex-direction: row;
+             justify-content: space-between;
+             // width: 100%;
+             .all-icon{
+                 position: relative;
+                 z-index: 1;
+                 display: flex;
+                 justify-content: center;
+                 align-items: center;
+                 width: 5rem;
+                 height: 5rem;
+                 font-size: 2.5rem;
+                 // color: #777;
+                 color:lightseagreen;
+                 border: 2px solid rgba($color: #000000, $alpha: 0.1);
+                 border-radius: 50%;
+                 padding: 1rem;
+                 background: #F9F9F9;
+                 
+             }
+             .active{
+ 
+                 position: relative;
+                 z-index: 1;
+                 display: flex;
+                 justify-content: center;
+                 align-items: center;
+                 width: 5rem;
+                 height: 5rem;
+                 font-size: 2.5rem;
+                 // color: #777;
+                 color:white;
+                 border: 2px solid rgba($color: #000000, $alpha: 0.1);
+                 border-radius: 50%;
+                 padding: 1rem;
+                 background:blueviolet;
+ 
+             }
+             &:before {
+                 width: 67%;
+                 position: absolute;
+                 top: calc(45% - 1px);
+                 // right: 0;
+                 // left: 0;
+                 Content: "";
+                 background-color:rgba($color: #000000, $alpha: 0.1);
+                 height: 2px;
+               }
+         }
+         
+         
+     }
+ }
+.smily{
+    display: flex;
+    flex-direction: row;
+    #btn2{
+        width: 400px;
+        height: 50px;
+        background-color: black;
+        color: white;
+    }
+}
+ 

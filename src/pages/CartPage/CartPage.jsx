@@ -3,7 +3,7 @@ import React from 'react';
 import Cart from '../../components/Cart/Cart'
 
 
-export default function ProductDescriptionPage(){
+export default function CartPage(){
 
     return(
         <>

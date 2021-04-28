@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
-// import { Link } from 'react-router-dom';
+import React, { useEffect, useState} from 'react';
+
+import { useHistory, useRouteMatch } from "react-router-dom";
 import store from '../../store';
 import { removeFromCart } from '../../Actions/CartActions';
 import CartItem from './CartItem';
@@ -14,45 +15,87 @@ import './styles.scss';
 
 
 
-function Cart() {
+function Cart(props) {
+    const match = useRouteMatch();
+    const history = useHistory();
     const cartStore = store.getState().cartState.items;
     // store.getState().cartState.items=[]
     const [cartItems, setCartItems] = useState([]);
+    // const context = useContext()
+    
 
     useEffect(() => {
         if (cartStore) {
             setCartItems(cartStore);
         }
-        
+       
 
     }, [cartStore])
+
+    
 
     const handleRemoveFromCart = (id) => {
         store.dispatch(removeFromCart(id));
         setCartItems(store.getState().cartState.items);
     }
 
-    if (cartItems.length === 0) {
-        return (<div>cart empty</div>)
+    const goToOrders = () => {
+        history.push(`/address`);
+        // context.manageAddress();
+        
+
     }
 
+    if (cartItems.length === 0) {
+        return (
+    <div className="cart-container">
+        <div className="cart">
+
+            <div className="bag-add-pay">
+
+                <div className="all-icon">
+                    <HiOutlineShoppingBag />
+                </div>
+                
+                
+
+                <div className="all-icon">
+                    <GoLocation />
+                </div>
+
+
+                <div className="all-icon">
+                    <MdPayment />
+                </div>
+            </div>
+
+        </div>
+        
+        
+        
+    </div>
+    )
+    }
+
+   
     return (
         <div className="cart-container">
             <div className="cart">
-
+                    
                 <div className="bag-add-pay">
 
-                    <div className="bag-icon">
+                    <div className={`all-icon ${match.path==='/cart' ? 'active' : ''}`}>
                         <HiOutlineShoppingBag />
                     </div>
-                    <div className="hrline"></div>
+                    
+                    
 
-                    <div className="lo-icon">
+                    <div className={`all-icon ${match.path==='/cart/address' ? 'active' : ''}`}>
                         <GoLocation />
                     </div>
 
 
-                    <div className="pay-icon">
+                    <div className="all-icon">
                         <MdPayment />
                     </div>
                 </div>
@@ -113,11 +156,12 @@ function Cart() {
 
                     </div>
                     <div className="placeorder">
-                        <button>Place order</button>
+                        <button onClick={goToOrders} >Place order</button>
                     </div>
 
                 </div>
             </div>
+            
         </div>
     )
 }

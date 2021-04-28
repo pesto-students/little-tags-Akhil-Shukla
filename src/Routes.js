@@ -10,6 +10,8 @@ import ProductPage from "./pages/ProductPage/ProductPage";
 import PrductDescriptionPage from "./pages/ProductDescriptionPage/ProductDescriptionPage"
 import CartPage from './pages/CartPage/CartPage'
 import WishListpage from "./pages/WishList/WishListPage";
+import OrderPage from './pages/OrderPage/OrderPage';
+import ThankyouPage from './pages/ThankyouPage/ThankyouPage';
 
 function Routes() {
   return (
@@ -32,6 +34,16 @@ function Routes() {
           <Route  path="/cart">
             <MainLayout>
             <CartPage />
+            </MainLayout>
+          </Route>
+          <Route  path="/address">
+            <MainLayout>
+            <OrderPage/>
+            </MainLayout>
+          </Route>
+          <Route  path="/thankyou">
+            <MainLayout>
+            <ThankyouPage/>
             </MainLayout>
           </Route>
           <Route path="/wishlist">
