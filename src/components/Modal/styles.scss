@@ -14,10 +14,8 @@
   text-align: center;
 
   .modal-container {
-    
     margin: 0 auto;
-    width: 40%;
-    height: 90%;
+
     pointer-events: auto;
     background-color: white;
     color: black;
@@ -41,5 +39,19 @@
     .modal-body {
       height: 100%;
     }
+  }
+
+  .address-true {
+    width: 40%;
+    height: 90%;
+  }
+  .signin-true {
+    width: 25%;
+    height: 70%;
+  }
+
+  .error-true {
+    width: 25%;
+    height: 50%;
   }
 }

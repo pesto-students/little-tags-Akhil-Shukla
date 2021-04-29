@@ -1,6 +1,6 @@
 import React, { useEffect, useState} from 'react';
 
-import { useHistory, useRouteMatch } from "react-router-dom";
+import { Link, useHistory, useRouteMatch } from "react-router-dom";
 import store from '../../store';
 import { removeFromCart } from '../../Actions/CartActions';
 import CartItem from './CartItem';
@@ -9,7 +9,6 @@ import { HiOutlineShoppingBag } from 'react-icons/hi';
 import { GoLocation } from 'react-icons/go';
 import { MdPayment } from 'react-icons/md';
 import { RiCouponLine } from 'react-icons/ri';
-import { AiFillGift } from 'react-icons/ai';
 import './styles.scss';
 
 
@@ -19,10 +18,7 @@ function Cart(props) {
     const match = useRouteMatch();
     const history = useHistory();
     const cartStore = store.getState().cartState.items;
-    // store.getState().cartState.items=[]
     const [cartItems, setCartItems] = useState([]);
-    // const context = useContext()
-    
 
     useEffect(() => {
         if (cartStore) {
@@ -31,9 +27,7 @@ function Cart(props) {
        
 
     }, [cartStore])
-
     
-
     const handleRemoveFromCart = (id) => {
         store.dispatch(removeFromCart(id));
         setCartItems(store.getState().cartState.items);
@@ -41,9 +35,6 @@ function Cart(props) {
 
     const goToOrders = () => {
         history.push(`/address`);
-        // context.manageAddress();
-        
-
     }
 
     if (cartItems.length === 0) {
@@ -68,8 +59,13 @@ function Cart(props) {
                     <MdPayment />
                 </div>
             </div>
-
+            
+            <div className="empty-cart">
+                Your Cart is empty <Link to="/">Click Here</Link> to shop   
+            </div>
         </div>
+
+        
         
         
         
@@ -135,7 +131,7 @@ function Cart(props) {
                     </div>
 
 
-                    <div className="gift">
+                    {/* <div className="gift">
                         <div className="gift-head">
                             GIFTING AND PERSONALIZATION
                         </div>
@@ -149,7 +145,7 @@ function Cart(props) {
                                 Only For $ 25</p>
                                 <text style={{ fontSize: '15px', color: '#61a0f2' }}>Add gift wrap</text></div>
                         </div>
-                    </div>
+                    </div> */}
                     <div className="price">
                         <PriceDetails itemList={cartItems} />
 

@@ -103,7 +103,7 @@ function OrderView() {
                 </div>
 
             </div>
-            {showAddress ? <Modal manageModal={manageAddress}><AddressDetails manageAddress={manageAddress} /></Modal> : null}
+            {showAddress ? <Modal manageModal={manageAddress} address={true}><AddressDetails manageAddress={manageAddress} /></Modal> : null}
         </>
 
     )

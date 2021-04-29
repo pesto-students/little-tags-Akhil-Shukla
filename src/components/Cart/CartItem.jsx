@@ -18,7 +18,7 @@ function CartItem(props) {
 
                 <div className="q-s" >
                     <div className="quat">
-                        <input type='number' value={quantity}></input>
+                        <input type='number' onChange={() => {}} value={quantity}></input>
                     </div>
 
                     <div className="size">

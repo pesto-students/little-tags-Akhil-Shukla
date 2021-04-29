@@ -1,10 +1,8 @@
 import React, {useState,useContext} from 'react';
-// import store from '../../../store';
-import Header from '../../header/Header';
+import Header from '../../Header/Header';
 import Modal from '../../Modal/Modal';
 import SignIn from '../../Signin/Signin';
 
-// import ProductDescription from '../../ProductDescription/ProductDescription'
 import FirebaseContext from '../../../firebase/context';
 import './styles.scss';
 
@@ -48,9 +46,9 @@ const MainLayout = ({children}) => {
                 
             </div>
             
-            {showSignIn?<Modal manageModal={manageModal}><SignIn manageModal={manageModal} showSignIn={showSignIn} manageLogo={manageLogo} /></Modal>:null}
+            {showSignIn?<Modal manageModal={manageModal} signin={true}><SignIn manageModal={manageModal} showSignIn={showSignIn} manageLogo={manageLogo} /></Modal>:null}
             
-           {/* {showProduct?<Modal manageModal={manageProduct}><ProductDescription manageProduct={manageProduct} /></Modal>:null} */}
+           
 
         </div>
         
