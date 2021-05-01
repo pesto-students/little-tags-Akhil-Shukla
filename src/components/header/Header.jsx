@@ -4,6 +4,7 @@ import Logo from "../../assets/logo.png";
 import { AiOutlineShoppingCart, AiOutlineUser, AiOutlineGlobal, AiOutlineSearch } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { useSelector } from "react-redux";
+import {AiFillHeart} from 'react-icons/ai';
 // import store from '../../store';
 
 
@@ -25,14 +26,14 @@ function Header({ manageSigInModal, showLogo, handleSignOut,cartItemLength }) {
                         </div>
                     </Link>
                 </div>
-                <div className="navigation-links">
-                    <Link to="/wishlist">WishList</Link>
-                </div>
+                
                 
                 <div className="search-input">
                     <span><AiOutlineSearch /></span>
                     <input type="text" placeholder="Search..."></input>
                 </div>
+
+                
                 {showLogo ? <div className="user-logo">
                     <AiOutlineUser />
                     <span className="user-logout-options">
@@ -58,7 +59,11 @@ function Header({ manageSigInModal, showLogo, handleSignOut,cartItemLength }) {
 
                     </span>
                 </div> : <div className="user-signin"><Link to="" onClick={manageSigInModal}><span>Log In/Sign Up</span></Link></div>}
+                <div className="navigation-links">
+                    <Link to="/wishlist"><AiFillHeart/></Link>
+                </div>
                 <div className="cart-logo"><Link to="/cart"><AiOutlineShoppingCart color='black' />{itemInCart.length > 0  ? <span className="store-count">{itemInCart.length}</span> : null}</Link></div>
+                
                 <div className="glob-logo"><AiOutlineGlobal /></div>
             </div>
         </header>

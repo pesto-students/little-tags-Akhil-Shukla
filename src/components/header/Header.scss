@@ -15,10 +15,13 @@
   align-items: center;
 
   .navigation-links {
-    margin-right: 10%;
-    font-weight: 600;
+    // margin-right: 10%;
+    margin-left: 8%;
+    // font-weight: 600;
+    font-size: 25px;
+    
     a {
-      color: black;
+      color: red;
     }
   }
 
@@ -79,7 +82,7 @@
   .cart-logo {
     font-size: 25px;
     padding-right: 40px;
-    padding-left: 50px;
+    padding-left: 30px;
     position: relative;
     .store-count{
       position:absolute;
