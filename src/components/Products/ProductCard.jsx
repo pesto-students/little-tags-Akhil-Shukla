@@ -4,10 +4,18 @@ import {FaCartPlus} from 'react-icons/fa';
 import {AiOutlineCloseCircle} from 'react-icons/ai';
 import PropTypes from 'prop-types';
 import './styles.scss';
+import store from '../../store/index';
+import {addToCart} from '../../Actions/CartActions';
 
-export default function ProductCard({id, title, price, image, category,isWishList,handleRemoveFromWishist}){
 
-  
+export default function ProductCard({id, title, price, image,description, category,isWishList,handleRemoveFromWishist}){
+
+  const handleAddToCart = () => {
+    const data  = {
+        id, title, price,image,description, category,size : 'L',quantity : '1'
+    };
+    store.dispatch(addToCart(data,id));
+  }
 
     return(
         <div className="el-wrapper">
@@ -35,7 +43,7 @@ export default function ProductCard({id, title, price, image, category,isWishLis
             <div className="cart">
               <span className="price"> ${price} </span>
               <span className="add-to-cart">
-                <span className="txt"><FaCartPlus />{isWishList? `  Move To Cart`:`  Add To Cart`}</span>
+                <span className="txt" onClick={handleAddToCart}><FaCartPlus />{isWishList? `  Move To Cart`:`  Add To Cart`}</span>
               </span>
             </div>
           </div>

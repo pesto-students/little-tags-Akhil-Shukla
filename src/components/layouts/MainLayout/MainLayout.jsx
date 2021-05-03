@@ -50,7 +50,7 @@ const MainLayout = ({children}) => {
             
             {showSignIn?<Modal manageModal={manageModal}><SignIn manageModal={manageModal} showSignIn={showSignIn} manageLogo={manageLogo} /></Modal>:null}
             
-           {/* {showProduct?<Modal manageModal={manageProduct}><ProductDescription manageProduct={manageProduct} /></Modal>:null} */}
+           
 
         </div>
         
