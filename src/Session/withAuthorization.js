@@ -1,27 +1,41 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect, useContext,useState } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import FirebaseContext from '../Firebase/context';
-import * as ROUTES from '../../constants/routes';
+import FirebaseContext from '../firebase/context';
+// import * as ROUTES from '../../constants/routes';
+import Modal from '../components/Modal/Modal'
+import SignIn from '../components/Signin/Signin';
 
 const withAuthorization = (Component) => {
   const NewComponent = (props) => {
     const firebase = useContext(FirebaseContext);
+    const [showSignIn, setShowSignIn] = useState(true);
+    const [showLogo, setShowLogo] =useState(false);
+
+    const manageModal = () => {
+      setShowSignIn(!showSignIn);
+  }
+  const manageLogo = () => {
+    setShowLogo(!showLogo);
+}
 
     const next = (authUser) => {
       if (!authUser) {
-        props.history.push(ROUTES.SIGN_IN);
+        props.history.push('/');
       }
     };
-    const fallback = () => props.history.push(ROUTES.SIGN_IN);
+    const fallback = () => props.history.push('/');
     useEffect(() => {
       firebase.onAuthChangeListener(next, fallback);
     }, []);
 
-    return props.authUser ? (
-      <Component {...props} />
+
+  
+
+    return props.authUser  ? (
+      <Component  {...props}/>
     ) : (
-      <p>You need to sign in to access this page </p>
+      <Component  {...props}/>
     );
   };
 

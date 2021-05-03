@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import productsArr from '../../localData/Products'; 
 import ProductCard from './ProductCard';
 import './styles.scss';
+import Footer from '../Footer/Footer';
 
 export default function Products(){
     const [filteredProducts, setFilteredProducts] = useState([]);
@@ -97,6 +98,7 @@ export default function Products(){
                     </div>
                 ))}
             </div>
+            
         </div>
     )
 }

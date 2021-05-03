@@ -23,10 +23,11 @@ function AddressCard({id,name,address,defaultAddress,phoneNumber,handleRemoveAdd
                 <span>Mobile <b>{phoneNumber}</b> </span>
                 <ul>
                     <li>Pay on delivery available</li>
+                    <li>{id}</li>
                 </ul>
             </div>
             <div className='addr-detail-data-bt'>
-                <button  onClick={handleRemoveAddress} >Remove</button>
+                <button  onClick={()=>handleRemoveAddress(id)} >Remove</button>
             </div>
             </div>
             

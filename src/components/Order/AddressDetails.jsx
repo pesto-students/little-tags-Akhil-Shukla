@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect , useRef } from 'react';
 import './styles.scss';
-// import store from '../../store/index';
-// import { addAddress } from '../../Actions/UserActions';
+
 
 function AddressDetails({ manageAddress }) {
+    const inputref = useRef();
     const [name, setName] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [address, setAddress] = useState('');
@@ -29,12 +29,10 @@ function AddressDetails({ manageAddress }) {
                 address,
                 defaultAddress
             }
-            console.log(data)
-            
             setDadress(daddress.push(data));
-            console.log(daddress)
-            localStorage.setItem('address', JSON.stringify(daddress));
-            console.log(localStorage.getItem('address'))
+            let temp = JSON.parse(localStorage.getItem('address'));
+            temp.push(data);
+            localStorage.setItem('address', JSON.stringify(temp));
             manageAddress();
         }
 
@@ -42,27 +40,14 @@ function AddressDetails({ manageAddress }) {
 
     }
 
+    useEffect(() => {
+            inputref.current.focus();
+    }, [])
+    
 
 
-    // const addNewAddress = e => {
-    //     if (name.length === 0 || phoneNumber.length === 0 || address.length === 0) {
-    //         return
-    //     } else {
-    //         e.preventDefault();
-    //         const data = {
-    //             id: aId,
-    //             name,
-    //             phoneNumber,
-    //             address,
-    //             defaultAddress
 
-    //         };
-    //         manageAddress();
-
-    //         store.dispatch(addAddress(data,aId));
-    //     }
-    //     // console.log(userAddress);
-    // };
+    
 
     return (
         <div className="address-detail-container">
@@ -73,7 +58,7 @@ function AddressDetails({ manageAddress }) {
 
                 <div className="inp-fields" required>
                     <p>
-                        <input type='text' placeholder=" " value={name} onChange={onNameChange} required />
+                        <input type='text' placeholder=" " value={name} onChange={onNameChange} ref={inputref} required />
                         <label>Name</label></p>
 
                 </div>

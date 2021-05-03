@@ -13,6 +13,7 @@ import {AiFillHeart} from 'react-icons/ai';
 function Header({ manageSigInModal, showLogo, handleSignOut,cartItemLength }) {
     const displayName = window.sessionStorage.getItem('userName');
     const itemInCart = useSelector(store => store.cartState.items);
+    const itemInWishlist = useSelector(store => store.wishListState.items);
     
 
     return (
@@ -60,7 +61,7 @@ function Header({ manageSigInModal, showLogo, handleSignOut,cartItemLength }) {
                     </span>
                 </div> : <div className="user-signin"><Link to="" onClick={manageSigInModal}><span>Log In/Sign Up</span></Link></div>}
                 <div className="navigation-links">
-                    <Link to="/wishlist"><AiFillHeart/></Link>
+                    <Link to="/wishlist"><AiFillHeart/>{itemInWishlist.length > 0  ? <span className="store-count">{itemInWishlist.length}</span> : null}</Link>
                 </div>
                 <div className="cart-logo"><Link to="/cart"><AiOutlineShoppingCart color='black' />{itemInCart.length > 0  ? <span className="store-count">{itemInCart.length}</span> : null}</Link></div>
                 

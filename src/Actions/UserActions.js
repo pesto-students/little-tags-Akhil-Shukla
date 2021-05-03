@@ -1,5 +1,11 @@
 import * as actions from '../constants/actionTypes';
 
+
+export const setAuthUser = (authUser) => ({
+  type: actions.SET_AUTH_USER,
+  authUser,
+});
+
 // user
 export const setUser = data => {
     return {

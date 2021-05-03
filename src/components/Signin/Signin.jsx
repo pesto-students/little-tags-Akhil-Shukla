@@ -21,6 +21,8 @@ export default function Signin({ manageModal, manageLogo }){
         })
         .then(() => {
           console.log(window.sessionStorage.getItem('userName'));
+          console.log(manageModal)
+          console.log('inside google promise')
           manageLogo();
           manageModal();
         })

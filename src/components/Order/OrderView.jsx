@@ -10,7 +10,10 @@ import AddressDetails from './AddressDetails';
 import './styles.scss';
 import store from '../../store/index';
 import AddressCard from './AddressCard';
-import PriceDetails from '../Cart/PriceDetails'
+import PriceDetails from '../Cart/PriceDetails';
+import withAuthorization from "../../Session/withAuthorization";
+import withAuthentication from "../../Session/withAuthentication"
+
 // import {removeAddress} from "../../Actions/UserActions";
 
 function OrderView() {
@@ -18,6 +21,7 @@ function OrderView() {
     const [showAddress, setShowAddress] = useState(true);
     const [address, setAdress] = useState([]);
     const cartStore = store.getState().cartState.items;
+    const [addressChanged , setAddressChanged] = useState(false);
 
 
 
@@ -34,18 +38,27 @@ function OrderView() {
 
     useEffect(() => {
 
-    }, [address])
+    }, [addressChanged])
 
     const goToThanks = () => {
         history.push(`/thankyou`);
         // context.manageAddress();
-        
-
     }
 
-    const handleRemoveAddress = () => {
-        // store.dispatch(removeAddress(id));
-        localStorage.setItem("address", JSON.stringify([]))
+    const handleRemoveAddress = (id) => {
+
+        let temp = JSON.parse(localStorage.getItem("address"));
+        console.log( temp)
+        
+
+        const removedAddr = temp.filter(item => item.id !== id)
+        
+
+        console.log(removedAddr);
+        localStorage.setItem("address", JSON.stringify(removedAddr));
+        setAdress(JSON.parse(localStorage.getItem("address")));
+        
+        // localStorage.setItem("address", JSON.stringify([]))
 
     }
     console.log('bel')
@@ -109,4 +122,4 @@ function OrderView() {
     )
 }
 
-export default OrderView
+export default OrderView;

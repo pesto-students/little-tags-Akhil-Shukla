@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from 'react';
 import { connect } from 'react-redux';
-import { setAuthUser } from '../../actions';
-import FirebaseContext from '../Firebase/context';
+import { setAuthUser } from '../Actions/UserActions';
+import FirebaseContext from '../firebase/context';
 
 const withAuthentication = (Component) => {
   const NewComponent = (props) => {
