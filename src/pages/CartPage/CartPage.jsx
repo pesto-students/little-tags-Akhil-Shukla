@@ -7,8 +7,12 @@ export default function CartPage(){
 
     return(
         <>
-            <Cart/>
-            <Footer />
+        <div className="cart-container">
+            <div><Cart/></div>
+        
+            <div><Footer /></div>
+        </div>
+            
         </>
     )
 } 
